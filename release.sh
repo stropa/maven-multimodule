@@ -177,12 +177,13 @@ mvn versions:set -DnewVersion=${newDevelopmentVersion}
 git add ./pom.xml
 git commit -m "release.sh: setting version for next development iteration: $newDevelopmentVersion"
 fi
-#exit 1;
 
 echo "Pushing $headBranchShortName"
 git push origin ${headBranchShortName};
 
 fi
+
+exit 1
 
 echo "prepareRelease=$prepareRelease"
 if [ prepareRelease ]
