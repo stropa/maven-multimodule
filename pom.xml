@@ -18,6 +18,7 @@
         <connection>scm:git:git@github.com:stropa/maven-multimodule.git</connection>
         <developerConnection>scm:git:git@github.com:stropa/maven-multimodule.git</developerConnection>
         <url>https://github.com/stropa/maven-multimodule</url>
+        <tag>HEAD</tag>
     </scm>
 
     <dependencyManagement>
