@@ -127,10 +127,10 @@ echo "Starting in branch $headBranchShortName"
 versionBase=${currentVersion%-*}
 minorVersion=${versionBase##*.}
 versionPrefix=${versionBase%%.*}
-#echo "Version base: $versionBase"
-#echo "Version prefix: $versionPrefix"
+echo "Version base: $versionBase"
+echo "Version prefix: $versionPrefix"
 let "minorVersion += 1"
-#echo "New minor version: $minorVersion"
+echo "New minor version: $minorVersion"
 newVersion="$versionPrefix.$minorVersion"
 newDevelopmentVersion="$newVersion-SNAPSHOT"
 echo "New Development Version: $newDevelopmentVersion"
@@ -139,6 +139,8 @@ branchName="$versionBase.x"
 branchVersion="$versionBase.0-SNAPSHOT"
 echo "Branch Name: $branchName"
 echo "Version in branch: $branchVersion"
+
+echo "createBranch=$createBranch"
 
 
 if [  createBranch ]
@@ -182,6 +184,7 @@ git push origin ${headBranchShortName};
 
 fi
 
+echo "prepareRelease=$prepareRelease"
 if [ prepareRelease ]
 then
 echo "================================================================================"
@@ -195,6 +198,7 @@ echo $prepareCmd
 $prepareCmd
 fi
 
+echo "fixMavenTags=$fixMavenTags"
 if [[ prepareRelease && fixMavenTags ]]
 then
 
